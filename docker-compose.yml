@@ -51,7 +51,7 @@ services:
         - UID=${UID:-1000}
         - GID=${GID:-1000}
     volumes:
-      - ./:/var/www/html:delegated
+      - ./:/var/www/html
     networks:
       - laravel
 
@@ -100,7 +100,7 @@ services:
         - GID=${GID:-1000}
     user: '${UID:-1000}:${GID:-1000}'
     volumes:
-      - ./:/var/www/html:delegated
+      - ./:/var/www/html
     depends_on:
       - database
     entrypoint: [ "php", "/var/www/html/artisan" ]
